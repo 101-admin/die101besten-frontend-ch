@@ -26,5 +26,6 @@ export const urlFor = (source: SanityImageSource) => builder.image(source);
 /**
  * Constants for edition and language
  */
-export const DEFAULT_EDITION = "schweiz";
+export type DefaultEdition = "schweiz" | "deutschland" | "dach";
+export const DEFAULT_EDITION: DefaultEdition = "schweiz";
 export const DEFAULT_LANGUAGE = "de";
