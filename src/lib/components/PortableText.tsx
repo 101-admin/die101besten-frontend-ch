@@ -71,7 +71,7 @@ export const portableComponents: Partial<PortableTextReactComponents> = {
       <code className="bg-gray-100 px-1 rounded">{children}</code>
     ),
     coloredText: ({ children }) => (
-      <span className="bg-gradient-to-r from-[#B64F32] to-[#F49E6E] text-transparent bg-clip-text box-decoration-clone">
+      <span className="bg-gradient-to-r from-[#535353] to-[#C1C1C1] text-transparent bg-clip-text box-decoration-clone">
         {children}
       </span>
     ),
