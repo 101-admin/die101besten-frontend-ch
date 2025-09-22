@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { EffectFade, Autoplay } from "swiper/modules";
 import type { AllHotelsSlider, SanityImage } from "@/lib";
-import NextLink from "../NextLink"
+import NextLink from "../NextLink";
 import { ColoredText } from "../ui/ColoredText";
 import { OptimizedImage } from "../ui/OptimizedImage";
 
@@ -61,12 +61,12 @@ const AllHotelSlider = ({ allHotelsSection }: AllHotelsSlider) => {
             )}
             {image?.link !== "" && (
               <section className="w-full h-full">
-                <div className="w-full h-full flex items-center justify-center bg-white">
-                  <OptimizedImage
-                    image={image as SanityImage}
-                    className="w-full h-full"
-                  />
-                </div>
+                <OptimizedImage
+                  image={image as SanityImage}
+                  width={(image.metadata?.dimensions.width as number) * 4}
+                  height={(image.metadata?.dimensions.height as number) * 4}
+                  className="w-full h-full object-cover bg-no-repeat"
+                />
                 <div className="w-full h-full pt-36 mb-5">
                   <div className="container px-5 md:px-10 lg:px-14 xl:px-20">
                     {image?.caption && (
