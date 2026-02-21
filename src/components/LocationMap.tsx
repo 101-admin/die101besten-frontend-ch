@@ -1,7 +1,12 @@
 import React, { Suspense } from "react";
 // import { FaPlus } from "react-icons/fa6";
 // import { FaMinus } from "react-icons/fa6";
-import type { HotelMapSection, HotelAddress, CTAButton } from "@/lib";
+import type {
+  HotelMapSection,
+  HotelAddress,
+  CTAButton,
+  HotelLocation,
+} from "@/lib";
 import NextLink from "./NextLink";
 import HotelMap from "./hotelMap";
 
@@ -84,17 +89,20 @@ const LocationMap = ({
   name,
   address,
   ctaButton,
+  location,
 }: {
   hotelId?: string;
   mapSection: HotelMapSection;
   name?: string;
   address?: HotelAddress;
   ctaButton?: CTAButton;
+  location?: HotelLocation;
 }) => {
   return (
     <>
       {hotelId !== undefined ? (
         <HotelMap
+          location={location}
           mapSection={mapSection}
           name={name}
           address={address}
