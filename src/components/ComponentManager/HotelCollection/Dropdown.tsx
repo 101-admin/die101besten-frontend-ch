@@ -29,7 +29,7 @@ const DropdownContent = ({
   const params = useParams();
   const locale = params.locale;
   const [searchValue, setSearchValue] = useState(
-    searchParams.get("search") || ""
+    searchParams.get("search") || "",
   );
 
   const updateSearchParams = (key: string, value: string) => {
@@ -68,7 +68,7 @@ const DropdownContent = ({
           </h4>
         </div> */}
         <h1 className="font-ogg font-normal text-[25px] sm:text-[30px] md:text-[38px] lg:text-[48px] leading-[28px] sm:leading-[35px] md:leading-[43px] lg:leading-[52px] mb-5">
-        <ColoredText
+          <ColoredText
             text={
               locale === "de"
                 ? "Die 101 besten Hotels #Schweiz#"
@@ -91,20 +91,20 @@ const DropdownContent = ({
                 }
               }}
             >
-             <SelectTrigger>
+              <SelectTrigger>
                 <SelectValue
                   placeholder={locale === "de" ? "Schweiz" : "Switzerland"}
                 />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="https://die-new.vercel.app/hotels">
+                  <SelectItem value="https://die101besten-frontend-de.vercel.app/hotels">
                     {locale === "de" ? "Deutschland" : "Germany"}
                   </SelectItem>
-                  <SelectItem value="https://die101besten-frontend-dach-steel.vercel.app/hotels">
+                  <SelectItem value="https://die101besten-frontend-dach.vercel.app/hotels">
                     {locale === "de" ? "DACH + Südtirol" : "DACH-region"}
                   </SelectItem>
-                  <SelectItem value="https://die101besten-frontend-ch-eight.vercel.app/hotels">
+                  <SelectItem value="https://die101besten-frontend-ch.vercel.app/hotels">
                     {locale === "de" ? "Schweiz" : "Switzerland"}
                   </SelectItem>
                 </SelectGroup>
@@ -122,11 +122,17 @@ const DropdownContent = ({
               onValueChange={(value) => updateSearchParams("segment", value)}
             >
               <SelectTrigger>
-                <SelectValue placeholder={locale === "de" ? "Alle Segmente" : "All Segments"} />
+                <SelectValue
+                  placeholder={
+                    locale === "de" ? "Alle Segmente" : "All Segments"
+                  }
+                />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
-                  <SelectItem value="bittewählen">{locale === "de" ? "Alle Segmente" : "All Segments"}</SelectItem>
+                  <SelectItem value="bittewählen">
+                    {locale === "de" ? "Alle Segmente" : "All Segments"}
+                  </SelectItem>
                   <SelectItem value="leisure">Leisure</SelectItem>
                   <SelectItem value="business">Business</SelectItem>
                 </SelectGroup>
@@ -135,13 +141,13 @@ const DropdownContent = ({
           </div>
           <div className="w-full flex flex-col justify-start items-baseline gap-1">
             <h3 className="text-[18px] font-montserrat font-semibold px-1">
-            {locale === "de" ? "Kategorie" : "Category"}
+              {locale === "de" ? "Kategorie" : "Category"}
             </h3>
             <Select
               defaultValue={searchParams.get("category") || ""}
               onValueChange={(value) => updateSearchParams("category", value)}
             >
-               <SelectTrigger>
+              <SelectTrigger>
                 <SelectValue
                   placeholder={
                     locale === "de" ? "Alle Kategorien" : "All Categories"
@@ -164,13 +170,13 @@ const DropdownContent = ({
           </div>
           <div className="w-full flex flex-col justify-start items-baseline gap-1">
             <h3 className="text-[18px] font-montserrat font-semibold px-1">
-            {locale === "de" ? "Stadt" : "City"}
+              {locale === "de" ? "Stadt" : "City"}
             </h3>
             <Select
               defaultValue={searchParams.get("city") || ""}
               onValueChange={(value) => updateSearchParams("city", value)}
             >
-             <SelectTrigger>
+              <SelectTrigger>
                 <SelectValue
                   placeholder={locale === "de" ? "Alle Städte" : "All Cities"}
                 />
